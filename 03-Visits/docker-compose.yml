@@ -1,0 +1,10 @@
+version:         '3'
+services:        #Todos os containers especificados aqui, pertecem à mesma rede.
+  redis-server:
+    image:       'redis'
+  node-app:
+    restart: always
+    build: .
+    ports:
+      - "4081:8081" # Não precisa abrir portas entre containers,
+                    # apenas para o mudno externo
